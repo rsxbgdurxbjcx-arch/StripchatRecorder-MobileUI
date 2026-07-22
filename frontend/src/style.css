@@ -1,0 +1,492 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ─── 主题：暖调 Noir Crimson / Theme: warm Noir Crimson ─────────────────────
+ * 深色为暖调墨黑 + 绯红主色；浅色为暖调纸白 + 同系绯红。
+ * Dark: warm ink black + crimson accent. Light: warm paper white + same crimson.
+ */
+:root {
+  --radius: 0.75rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.27 0.012 55);
+  --card: oklch(0.996 0.003 80);
+  --card-foreground: oklch(0.27 0.012 55);
+  --popover: oklch(0.996 0.003 80);
+  --popover-foreground: oklch(0.27 0.012 55);
+  --primary: oklch(0.52 0.19 16);
+  --primary-foreground: oklch(0.985 0.005 80);
+  --secondary: oklch(0.945 0.007 75);
+  --secondary-foreground: oklch(0.35 0.014 55);
+  --muted: oklch(0.95 0.006 75);
+  --muted-foreground: oklch(0.53 0.014 55);
+  --accent: oklch(0.935 0.012 70);
+  --accent-foreground: oklch(0.32 0.014 55);
+  --destructive: oklch(0.54 0.215 25);
+  --border: oklch(0.895 0.007 70);
+  --input: oklch(0.895 0.007 70);
+  --ring: oklch(0.52 0.19 16 / 45%);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.27 0.012 55);
+  --sidebar-primary: oklch(0.52 0.19 16);
+  --sidebar-primary-foreground: oklch(0.985 0.005 80);
+  --sidebar-accent: oklch(0.94 0.01 70);
+  --sidebar-accent-foreground: oklch(0.32 0.014 55);
+  --sidebar-border: oklch(0.9 0.007 70);
+  --sidebar-ring: oklch(0.52 0.19 16 / 45%);
+}
+
+.dark {
+  --background: oklch(0.17 0.008 65);
+  --foreground: oklch(0.945 0.007 80);
+  --card: oklch(0.208 0.009 65);
+  --card-foreground: oklch(0.945 0.007 80);
+  --popover: oklch(0.218 0.009 65);
+  --popover-foreground: oklch(0.945 0.007 80);
+  --primary: oklch(0.62 0.19 16);
+  --primary-foreground: oklch(0.985 0.005 80);
+  --secondary: oklch(0.255 0.009 65);
+  --secondary-foreground: oklch(0.92 0.007 80);
+  --muted: oklch(0.245 0.009 65);
+  --muted-foreground: oklch(0.695 0.012 60);
+  --accent: oklch(0.28 0.013 65);
+  --accent-foreground: oklch(0.945 0.007 80);
+  --destructive: oklch(0.62 0.2 25);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 13%);
+  --ring: oklch(0.62 0.19 16 / 55%);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.192 0.009 65);
+  --sidebar-foreground: oklch(0.945 0.007 80);
+  --sidebar-primary: oklch(0.62 0.19 16);
+  --sidebar-primary-foreground: oklch(0.985 0.005 80);
+  --sidebar-accent: oklch(0.28 0.013 65);
+  --sidebar-accent-foreground: oklch(0.945 0.007 80);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.62 0.19 16 / 55%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "tnum" 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: oklch(0.58 0.19 16 / 85%);
+    color: oklch(0.985 0.005 80);
+  }
+  button, [role="button"], label[for], a, select,
+  [data-slot="switch"], [data-slot="number-field-increment"],
+  [data-slot="number-field-decrement"] {
+    cursor: pointer;
+  }
+}
+
+/* ─── 组件质感增强（纯 CSS，不改组件）/ Component polish via data-slot hooks ── */
+
+/* 按钮：按压反馈与主按钮立体质感 / Buttons: press feedback & primary depth */
+[data-slot="button"] {
+  letter-spacing: 0.01em;
+  transition-property: color, background-color, border-color, box-shadow, transform, filter, opacity;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+[data-slot="button"]:not(:disabled):active {
+  transform: scale(0.965);
+}
+[data-slot="button"][data-variant="default"] {
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 14%),
+    0 1px 2px oklch(0 0 0 / 18%),
+    0 4px 12px -4px oklch(0.55 0.19 16 / 45%);
+}
+[data-slot="button"][data-variant="default"]:not(:disabled):hover {
+  filter: brightness(1.07);
+}
+[data-slot="button"][data-variant="destructive"] {
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 12%),
+    0 1px 2px oklch(0 0 0 / 18%);
+}
+
+/* 卡片：细腻描边 + 柔和投影 / Cards: hairline border + soft layered shadow */
+[data-slot="card"] {
+  box-shadow:
+    0 1px 2px oklch(0 0 0 / 4%),
+    0 8px 24px -16px oklch(0 0 0 / 18%);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.dark [data-slot="card"] {
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 3%),
+    0 1px 2px oklch(0 0 0 / 30%),
+    0 12px 28px -16px oklch(0 0 0 / 55%);
+}
+
+/* 徽章：紧凑精致 / Badges: compact & refined */
+[data-slot="badge"] {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* 对话框：更大的圆角与深影 / Dialogs: larger radius, deeper shadow */
+[data-slot="dialog-content"] {
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow:
+    0 4px 12px -4px oklch(0 0 0 / 15%),
+    0 24px 64px -16px oklch(0 0 0 / 35%);
+}
+
+/* 输入控件：圆角统一 / Inputs: unified radius */
+[data-slot="input"],
+[data-slot="select-trigger"],
+[data-slot="number-field-input"] {
+  border-radius: var(--radius-md);
+}
+
+/* 表格表头：微型大写标签风格 / Table head: micro uppercase labels */
+[data-slot="table-head"] {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* 开关：内阴影增加质感 / Switch: inset depth */
+[data-slot="switch"] {
+  box-shadow: inset 0 1px 2px oklch(0 0 0 / 12%);
+}
+
+/* 登录页背景：氛围光斑 / Login backdrop: ambient glow */
+.login-bg {
+  background:
+    radial-gradient(42rem 30rem at 15% -10%, oklch(0.58 0.19 16 / 14%), transparent 60%),
+    radial-gradient(36rem 26rem at 110% 110%, oklch(0.58 0.19 16 / 10%), transparent 60%),
+    var(--background);
+}
+
+/* 品牌渐变点 / Brand gradient dot */
+.brand-dot {
+  background: linear-gradient(135deg, oklch(0.68 0.2 16), oklch(0.5 0.21 20));
+  box-shadow: 0 0 10px oklch(0.58 0.19 16 / 55%);
+}
+
+/* 主播卡片：悬浮上浮 / Streamer card: hover lift */
+.streamer-card:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px oklch(0 0 0 / 6%),
+    0 14px 32px -14px oklch(0 0 0 / 30%);
+}
+
+/* 隐藏式滚动条 / Overlay scrollbar
+ *
+ * 默认隐藏滚动条轨道，滚动时通过 .is-scrolling class 短暂显示，停止后淡出。
+ * Default: hide scrollbar track. Show briefly via .is-scrolling class while scrolling, then fade out.
+ */
+.scrollbar-overlay {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  /* 只在隐藏方向（is-scrolling 移除时）过渡，显示时瞬间出现 */
+  /* Transition only on hide (when .is-scrolling is removed); appear instantly */
+  transition: scrollbar-color 0.3s ease;
+}
+.scrollbar-overlay.is-scrolling {
+  scrollbar-color: oklch(0.55 0.01 60 / 40%) transparent;
+  transition: none;
+}
+
+/* Webkit (Chrome / Edge) */
+.scrollbar-overlay::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-overlay::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-overlay::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+  /* 只在隐藏方向过渡 / Transition only on hide */
+  transition: background-color 0.3s ease;
+}
+.scrollbar-overlay.is-scrolling::-webkit-scrollbar-thumb {
+  background-color: oklch(0.55 0.01 60 / 40%);
+  transition: none;
+}
+.scrollbar-overlay.is-scrolling::-webkit-scrollbar-thumb:hover {
+  background-color: oklch(0.55 0.01 60 / 65%);
+}
+
+/* 页面切换淡入淡出 / Page transition fade */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+/* setup ↔ 主布局切换（稍慢，更有仪式感）/ Setup ↔ main layout transition */
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.layout-enter-from {
+  opacity: 0;
+  transform: scale(0.985);
+}
+.layout-leave-to {
+  opacity: 0;
+  transform: scale(1.008);
+}
+
+/* setup 步骤向前滑动 / Setup step forward slide */
+.step-forward-enter-active,
+.step-forward-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.step-forward-enter-from {
+  opacity: 0;
+  transform: translateX(24px);
+}
+.step-forward-leave-to {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+
+/* setup 步骤向后滑动 / Setup step back slide */
+.step-back-enter-active,
+.step-back-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.step-back-enter-from {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+.step-back-leave-to {
+  opacity: 0;
+  transform: translateX(24px);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── 应用外壳：高度实时取 visualViewport（--app-height），回退 100dvh ─────────
+ * 配合 App.vue 的 syncAppHeight()，保证安卓 Chrome/Firefox 动态工具栏与键盘
+ * 弹起时外壳高度始终等于可视高度，底部菜单永不松动。
+ * App shell: height synced to visualViewport (--app-height), fallback 100dvh.
+ * Works with syncAppHeight() in App.vue so the shell always matches the visible
+ * viewport on Android Chrome/Firefox; the bottom nav never comes loose. */
+.app-shell {
+  height: var(--app-height, 100dvh);
+}
+
+/* ─── 安卓移动端全局适配 / Android mobile global adaptations ─────────────── */
+
+@media (max-width: 767px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    /* 防止地址栏伸缩/过度滚动时页面移位（替代旧的 position: fixed hack） */
+    /* Prevent layout shift from address-bar resize / overscroll (replaces the old position: fixed hack) */
+    overscroll-behavior: none;
+  }
+  #app {
+    height: 100%;
+  }
+
+  /* 防安卓 Chrome 输入聚焦缩放 / Prevent focus zoom on Android Chrome */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  .scrollbar-overlay::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* 主播网格：一行两列紧凑卡片 / Streamer grid: 2 compact columns */
+  .streamer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Toast 上移到导航栏之上 / Toast above bottom nav */
+  [data-sonner-toaster] {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* 对话框贴边留距 / Dialog edge margin */
+  [data-slot="dialog-content"] {
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  /* 页面标题略缩 / Page titles slightly smaller */
+  h1 {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* ─── 录制文件表格：安卓端全面适配 / Recordings table: full Android adaptation ──
+ * 策略：页面固定、表体区域独立双向滚动 + 表头吸附；
+ * 超紧凑字号 / 字距 / 内边距，操作列折叠为图标按钮，日期改短格式。
+ * Strategy: fixed page, table body scrolls both ways with sticky header;
+ * ultra-compact font/tracking/padding, icon-only action buttons, short dates.
+ */
+@media (max-width: 767px) {
+  /* 表体区域：页面内独立双向滚动容器（表头吸附于此）/ Table body: independent scroll area */
+  .rec-wrap {
+    flex: 1 1 0%;
+    min-height: 0;
+    overflow: auto;
+    padding-bottom: 0 !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .recordings-table {
+    font-size: 10px !important;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  .recordings-table [data-slot="table-head"] {
+    font-size: 9px !important;
+    letter-spacing: 0.02em;
+  }
+  .recordings-table th,
+  .recordings-table td {
+    padding: 3px 4px !important;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  /* 文件名：缩进收敛 + 省略 / Filename: tighter indent + ellipsis */
+  .recordings-table .rec-filename {
+    max-width: 86px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.75rem !important;
+  }
+  /* 后处理列宽收敛 / Postprocess column width tightened */
+  .recordings-table .rec-pp {
+    min-width: 4.5rem !important;
+  }
+  .recordings-table .rec-pp .max-w-50,
+  .recordings-table .rec-pp .max-w-40 {
+    max-width: 5.5rem !important;
+  }
+  /* 操作按钮：文字隐藏、图标显示 / Action buttons: icon-only */
+  .recordings-table .rec-btn-text {
+    display: none;
+  }
+  .recordings-table button {
+    font-size: 9px !important;
+    padding: 2px 4px !important;
+    height: auto !important;
+    min-height: 22px;
+  }
+  .recordings-table .rec-action-btn {
+    width: 22px !important;
+    min-width: 22px !important;
+    padding: 0 !important;
+  }
+  .recordings-table table {
+    table-layout: auto;
+  }
+  /* 复选框与徽章同步缩小 / Checkbox & badge scaled down */
+  .recordings-table [data-slot="checkbox"] {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .recordings-table [data-slot="badge"] {
+    font-size: 8px !important;
+    padding: 0 3px !important;
+    letter-spacing: 0.01em;
+  }
+  /* 进度条更细 / Slimmer progress bars */
+  .recordings-table [data-slot="progress"] {
+    height: 4px !important;
+  }
+  /* 完成/失败状态字与表格字号对齐 / Done-failed status matches table font size */
+  .recordings-table .text-lg {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* 桌面端隐藏图标按钮的图标 / Hide action icons on desktop */
+.rec-btn-icon {
+  display: none;
+}
+@media (max-width: 767px) {
+  .rec-btn-icon {
+    display: block;
+  }
+}

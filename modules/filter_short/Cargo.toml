@@ -1,0 +1,11 @@
+[package]
+name = "filter_short"
+version = "0.3.0"
+edition = "2024"
+
+[[bin]]
+name = "filter_short_v030"
+path = "src/main.rs"
+
+[dependencies]
+pp_utils = { path = "../pp_utils" }
